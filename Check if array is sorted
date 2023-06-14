@@ -1,0 +1,14 @@
+class Solution {
+    boolean arraySortedOrNot(int[] arr, int n) {
+            int count=0;
+            for(int i=1;i<n;i++){
+                if(arr[i-1]<arr[i]||arr[i-1]==arr[i]){
+                    count++;
+                }
+            }
+            if(count==(n-1)){  //if array is sorted then count will always be n-1 at last
+                return true;
+            }
+            return false;
+    }
+}
