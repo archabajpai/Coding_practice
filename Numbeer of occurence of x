@@ -1,0 +1,25 @@
+ int count(int[] arr, int n, int x) {
+        // code here
+        int c=0;
+        
+        int low=0; 
+        int high =n-1;
+        
+        while(low<=high)
+        {
+            if(arr[low] == x)
+            {
+                c+=1;
+            }
+            if(arr[high] == x)
+            {
+                c+=1;
+            }
+              if(low == high && arr[low] == x)  //edge case
+            {
+                c--;
+            }
+            low++;
+            high--;
+        }
+        return c;
