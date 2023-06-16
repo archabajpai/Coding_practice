@@ -1,0 +1,20 @@
+class Solution {
+    int findKRotation(int arr[], int n) {
+        // code here
+         int low = 0;
+          
+        int high =arr.length-1;
+        while(low<=high){
+            int mid = low + (high-low)/2;
+            if(arr[mid]<arr[high]){
+                high=mid;
+            }
+            else{                                     //no of rotations=index of the minimum element
+                low = mid+1;
+            }
+        }
+        return high;
+    
+        
+    }
+}
