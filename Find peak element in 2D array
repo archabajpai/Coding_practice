@@ -1,0 +1,28 @@
+public class Solution {
+    public static int[] findPeakGrid(int [][]G){
+        // Write your code here.
+         int n = G.length, m = G[0].length;
+
+        int indx = 0, indy = 0;
+
+        //Performing Linear Search on the whole grid to find the location of maximum value.
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+
+                if (G[indx][indy] < G[i][j])
+                {
+
+                    indx = i;
+                    indy = j;
+                }
+            }
+
+        }
+
+        return new int[]{indx, indy};
+        
+
+    }
+}
