@@ -1,0 +1,17 @@
+ if(head == null || head.next == null){
+            return null;
+        }
+        if(head.next.next == null){
+            head.next = null;
+            return head;
+        }
+        Node fast = head,slow = head;
+        //to find middle node
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+       slow.data = slow.next.data;
+       slow.next = slow.next.next;
+       
+       return head;
