@@ -1,0 +1,23 @@
+Node slow=head;
+        Node fast=head;
+        boolean isCycle=false;
+        
+        while(fast.next!=null&&fast.next.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                isCycle=true;
+                break;
+            }
+        }
+        int count=1;
+        if(!isCycle) return 0;
+        if(isCycle){
+            fast=fast.next;
+            while(fast!=slow){
+                count++;
+                fast=fast.next;
+            }
+        }
+        return count;
+        
