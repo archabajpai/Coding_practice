@@ -1,0 +1,15 @@
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+       HashMap<Integer,Integer> map=new HashMap<>();
+       for(int num:arr){
+           //it puts data as
+        //    (1:3,2:2) number with its count
+           map.put(num,map.getOrDefault(num,0)+1);
+     }
+    HashSet<Integer> set=new HashSet<>(map.values());
+    // we store all the count values in the set, if all values are unique,size of set is same as map, but if the values are same in map, theen set will have only one of these values as it doesn t have duplicates
+    return set.size()==map.size();
+       
+
+    }
+}
